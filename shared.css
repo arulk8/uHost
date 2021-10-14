@@ -11,12 +11,21 @@ body {
   width: 100%;
   background: #2ddf5c;
   position: fixed;
-  padding: 8px 16px;
+  padding: 0.5rem 1rem;
   top: 0;
   left: 0;
   z-index: 1;
 }
-
+.backdrop {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: none;
+}
 .main-header > div {
   display: inline-block;
   vertical-align: middle;
@@ -26,7 +35,7 @@ body {
   color: #0e4f1f;
   text-decoration: none;
   font-weight: bold;
-  font-size: 22px;
+  font-size: 1.4rem;
   height: 22px;
   width: 22px;
   display: inline-block;
@@ -51,7 +60,7 @@ body {
 
 .main-nav__item {
   display: inline-block;
-  margin: 0 16px;
+  margin: 0 1rem;
 }
 
 .main-nav__item a {
@@ -68,8 +77,8 @@ body {
 .main-nav__item--cta a {
   color: white;
   background-color: #ff1b68;
-  padding: 8px 16px;
-  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
 }
 
 .main-nav__item--cta a:hover,
@@ -80,8 +89,8 @@ body {
 }
 .main-footer {
   background-color: black;
-  padding: 32px;
-  margin-top: 48px;
+  padding: 2rem;
+  margin-top: 3rem;
 }
 .main-footer_items {
   list-style: none;
@@ -92,7 +101,7 @@ body {
 
 .main-footer_item {
   display: inline-block;
-  margin: 0 16px;
+  margin: 0 1rem;
 }
 .main-footer_item a {
   color: white;
@@ -109,7 +118,7 @@ body {
   background-color: #0e4f1f;
   font: inherit;
   border: 1.5px solid #0e4f1f;
-  padding: 8px;
+  padding: 0.5rem;
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;

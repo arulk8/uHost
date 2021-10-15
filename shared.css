@@ -22,8 +22,8 @@ body {
   z-index: 100;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   display: none;
 }
 .main-header > div {
@@ -39,6 +39,7 @@ body {
   height: 22px;
   width: 22px;
   display: inline-block;
+  vertical-align: middle;
 }
 
 .main-header__brand > img {
@@ -48,7 +49,7 @@ body {
 .main-nav {
   display: inline-block;
   text-align: right;
-  width: calc(100% - 75px);
+  width: calc(100% - 100px);
   vertical-align: middle;
 }
 
@@ -63,22 +64,26 @@ body {
   margin: 0 1rem;
 }
 
-.main-nav__item a {
+.main-nav__item a,
+.mobile-nav__item a {
   text-decoration: none;
   color: #0e4f1f;
 }
 
 .main-nav__item a:hover,
-.main-nav__item a:active {
+.main-nav__item a:active,
+.mobile-nav__item--cta a:hover,
+.mobile-nav__item--cta a:hover {
   color: white;
   border-bottom: 5px solid white;
 }
 
-.main-nav__item--cta a {
+.main-nav__item--cta a,
+.mobile-nav__item--cta a {
   color: white;
   background-color: #ff1b68;
   padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
+  border-radius: 8px;
 }
 
 .main-nav__item--cta a:hover,
@@ -128,4 +133,68 @@ body {
 .button:active {
   color: #0e4f1f;
   background-color: white;
+}
+
+/***Mobile nav starts from here***/
+
+.mobile-nav {
+  display: none;
+  position: fixed;
+  z-index: 101;
+  top: 0;
+  left: 0;
+  background: white;
+  width: 80%;
+  height: 100vh;
+}
+
+.mobile-nav__items {
+  width: 90%;
+  height: 100%;
+  list-style: none;
+  margin: 10% auto;
+  padding: 0;
+  text-align: center;
+}
+
+.mobile-nav__item {
+  margin: 1rem 0;
+}
+
+.mobile-nav__item a {
+  font-size: 1.5rem;
+}
+
+/***Mobile nav starts ends here***/
+/**Hamburger button starts**/
+.toggle-button {
+  width: 3rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding-top: 0;
+  padding-bottom: 0;
+  vertical-align: middle;
+}
+
+.toggle-button:focus {
+  outline: none;
+}
+
+.toggle-button__bar {
+  width: 100%;
+  height: 0.2rem;
+  background: black;
+  display: block;
+  margin: 0.6rem 0;
+}
+
+/**Hamburger button ends**/
+
+.open {
+  display: block !important;
+  /*we are adding important because .modal and .open
+   will become same specficity and we are 
+  importing main.css after shared.css 
+  hence .modal which has display:none will have more priority*/
 }
